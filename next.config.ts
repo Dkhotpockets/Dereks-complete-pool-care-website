@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
       exclude: ['error', 'warn'],
     } : false,
   },
+  // Explicitly ensure no trailing slash and clean paths
+  trailingSlash: false,
 };
 
 export default nextConfig;
