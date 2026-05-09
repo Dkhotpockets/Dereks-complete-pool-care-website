@@ -19,10 +19,6 @@ const nextConfig: NextConfig = {
       exclude: ['error', 'warn'],
     } : false,
   },
-  experimental: {
-    // Optimize package imports
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
-  },
 };
 
 export default nextConfig;
