@@ -50,16 +50,13 @@ export default function PoolCard({ pool, onSelect }: PoolCardProps) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between mt-auto">
-          <div>
-            <span className="block text-[10px] uppercase text-zinc-500 font-bold">Starting At</span>
-            <span className="text-2xl font-bold text-pool-400">${pool.price.toLocaleString()}</span>
-          </div>
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+          <span className="text-zinc-400 text-xs font-medium uppercase tracking-wider">Premium Selection</span>
           <button
             onClick={() => onSelect?.(pool)}
-            className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-pool-500 hover:text-white transition-all duration-300"
+            className="bg-white text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-pool-500 hover:text-white transition-all duration-300 shadow-lg shadow-white/5"
           >
-            View Specs
+            View Details
           </button>
         </div>
       </div>

@@ -168,7 +168,7 @@ export function AbovegroundSection() {
               {/* Footer */}
               <div className="p-8 border-t border-white/5 bg-zinc-950/50 shrink-0 text-center">
                 <p className="text-zinc-500 text-sm italic">
-                  *Prices shown are for base pool kits. Professional installation and excavation are quoted separately.
+                  *Installation, filtration equipment, and deck integration are custom-quoted based on your unique landscape.
                 </p>
               </div>
             </motion.div>

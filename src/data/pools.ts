@@ -3,7 +3,6 @@ export interface PoolModel {
   name: string;
   series: string;
   description: string;
-  price: number;
   image: string;
   shapes: ('Round' | 'Oval')[];
   sizes: string[];
@@ -21,7 +20,7 @@ export const poolModels: PoolModel[] = [
     name: 'Chesapeake',
     series: 'Hybrid Series',
     description: 'Our most popular hybrid model, blending high-tensile steel strength with corrosion-proof resin components. A Long Island favorite for its durability and classic look.',
-    price: 4850,
+
     image: '/images/pools/chesapeake.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "30' Round", "15'x30' Oval", "18'x33' Oval"],
@@ -42,7 +41,7 @@ export const poolModels: PoolModel[] = [
     name: 'Costa Del Sol',
     series: 'Hybrid Series',
     description: 'Inspired by the sun-drenched coasts of Spain, the Costa Del Sol features a sophisticated design with unmatched salt-water resistance and structural integrity.',
-    price: 5100,
+
     image: '/images/pools/costa_del_sol.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval", "18'x33' Oval"],
@@ -63,7 +62,7 @@ export const poolModels: PoolModel[] = [
     name: 'Emotion',
     series: 'Resin Series',
     description: 'A masterpiece of pool engineering. The Emotion offers a sleek, modern aesthetic with a 100% resin structure that is immune to corrosion and rust.',
-    price: 5400,
+
     image: '/images/pools/emotion.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval"],
@@ -84,7 +83,7 @@ export const poolModels: PoolModel[] = [
     name: 'Esprit II',
     series: 'Steel Series',
     description: 'The Esprit II combines affordability with proven reliability. A classic steel-walled design that has stood the test of time in thousands of Long Island backyards.',
-    price: 3800,
+
     image: '/images/pools/esprit_ii.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["15' Round", "18' Round", "21' Round", "24' Round", "27' Round", "12'x24' Oval", "15'x30' Oval"],
@@ -105,7 +104,7 @@ export const poolModels: PoolModel[] = [
     name: 'Patriot Hybrid',
     series: 'Hybrid Series',
     description: 'Strength and honor in every component. The Patriot Hybrid is a heavy-duty model designed for families who want a pool that will last for generations.',
-    price: 4600,
+
     image: '/images/pools/patriot.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval"],
@@ -126,7 +125,7 @@ export const poolModels: PoolModel[] = [
     name: 'Protégé',
     series: 'Steel Series',
     description: 'Perfect for the first-time pool owner. The Protégé offers exceptional value with a focus on simplicity, ease of maintenance, and reliable construction.',
-    price: 3600,
+
     image: '/images/pools/protege.jpg',
     shapes: ['Round'],
     sizes: ["15' Round", "18' Round", "21' Round", "24' Round"],
@@ -147,7 +146,7 @@ export const poolModels: PoolModel[] = [
     name: 'Regency',
     series: 'Hybrid Series',
     description: 'Add a touch of royalty to your backyard. The Regency features an elegant cream-toned frame with high-impact resin components for a sophisticated look.',
-    price: 4750,
+
     image: '/images/pools/regency.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval"],
@@ -168,7 +167,7 @@ export const poolModels: PoolModel[] = [
     name: 'Sensation',
     series: 'Hybrid Series',
     description: 'The Sensation is truly sensational. A versatile model that can be installed above ground, semi-inground, or fully inground to fit any landscape.',
-    price: 5300,
+
     image: '/images/pools/sensation-v2.png',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval"],
@@ -189,7 +188,7 @@ export const poolModels: PoolModel[] = [
     name: 'Trevi 211 (Drakkar)',
     series: 'Trevi Series',
     description: 'The legendary Trevi 211 with the Drakkar wall pattern. Robust, elegant, and built for those who demand the absolute best in pool technology and design.',
-    price: 5900,
+
     image: '/images/pools/trevi-drakkar.jpg',
     shapes: ['Round', 'Oval'],
     sizes: ["18' Round", "21' Round", "24' Round", "27' Round", "15'x30' Oval"],
@@ -210,7 +209,7 @@ export const poolModels: PoolModel[] = [
     name: 'Vista',
     series: 'Steel Series',
     description: 'Clear views and clean lines. The Vista offers a contemporary look with a focus on value and durability, featuring a subtle grey frame and a distinctive diamond-pattern designer wall.',
-    price: 3950,
+
     image: '/images/pools/vista-v2.png',
     shapes: ['Round', 'Oval'],
     sizes: ["15' Round", "18' Round", "21' Round", "24' Round", "27' Round", "30' Round", "12'x21' Oval", "12'x24' Oval", "15'x24' Oval", "15'x30' Oval", "18'x33' Oval"],
