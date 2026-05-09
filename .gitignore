@@ -17,6 +17,13 @@ node_modules/
 .next/
 out/
 
+# pwa
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+public/fallback-*.js
+
+
 # production
 /build
 
@@ -51,3 +58,6 @@ specs/
 
 # large assets
 /public/pool-pics/
+
+
+

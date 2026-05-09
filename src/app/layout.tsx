@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -9,9 +9,25 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0ea5e9",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Derek's Complete Pool Care | Luxury Pool Maintenance Long Island",
   description: "Long Island's premier 5-star pool service. 15+ years experience in luxury pool maintenance, repairs, and transformations.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Derek's Pools",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   keywords: [
     "pool maintenance",
     "pool repair",
