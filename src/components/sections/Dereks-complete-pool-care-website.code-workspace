@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../Dereks-complete-pool-care-website"
+		},
+		{
+			"path": "../../../../../pools"
+		},
+		{
+			"path": "../../../../../pool pics"
+		},
+		{
+			"path": "../../../../e-commerce website/.claude"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
