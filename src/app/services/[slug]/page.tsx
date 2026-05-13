@@ -10,9 +10,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 interface ServicePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for better performance
@@ -22,8 +22,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServiceDetailPage({ params }: ServicePageProps) {
-  const service = services.find(s => s.id === params.slug);
+export default async function ServiceDetailPage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = services.find(s => s.id === slug);
 
   if (!service) {
     notFound();
