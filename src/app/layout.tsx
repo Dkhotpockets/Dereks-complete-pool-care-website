@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { StickyCallFooter } from "@/components/StickyCallFooter";
 import { contactInfo } from "@/data/business";
 import "./globals.css";
@@ -15,7 +17,7 @@ export const viewport: Viewport = {
   themeColor: "#0ea5e9",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5, // Improved accessibility for font scaling
+  maximumScale: 5,
 };
 
 export const metadata: Metadata = {
@@ -75,7 +77,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-slate-950 text-white selection:bg-pool-500/30 selection:text-pool-200`}>
+        <Navigation />
         {children}
+        <Footer />
         <StickyCallFooter />
         <Analytics />
       </body>
