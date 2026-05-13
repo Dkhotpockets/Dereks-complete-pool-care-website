@@ -8,7 +8,7 @@ import { businessInfo, contactInfo } from '@/data/business';
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 w-full pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-950 w-full pt-40 md:pt-48">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0c4a6e,transparent_60%)]" />
@@ -43,8 +43,8 @@ export function HeroSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button asChild size="lg" className="bg-pool-500 hover:bg-pool-400 text-white h-14 px-8 rounded-full text-lg font-bold shadow-lg shadow-pool-500/25 transition-all hover:scale-105">
-                <a href="#contact">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" /></a>
+              <Button asChild size="lg" className="bg-pool-500 hover:bg-pool-400 text-white h-14 px-8 rounded-full text-lg font-bold shadow-lg shadow-pool-500/25 transition-all hover:scale-105 min-h-[48px]">
+                <a href="#contact" className="flex items-center">Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" /></a>
               </Button>
             </div>
 
@@ -69,11 +69,13 @@ export function HeroSection() {
           >
             <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
               <Image 
-                src="/images/hero-v2.png" 
+                src="/luxury_hero.png" 
                 alt="Luxury Pool Design" 
                 fill 
                 className="object-cover" 
-                priority
+                priority={true}
+                // @ts-ignore
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
               

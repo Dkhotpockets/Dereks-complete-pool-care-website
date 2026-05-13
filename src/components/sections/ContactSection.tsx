@@ -184,7 +184,12 @@ export function ContactSection() {
                               <FormItem>
                                 <FormLabel className="text-pool-100/50">Full Name</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="John Doe" className="glass-input h-12" {...field} />
+                                  <Input 
+                                    placeholder="John Doe" 
+                                    className="glass-input h-14 text-lg" 
+                                    autoComplete="name"
+                                    {...field} 
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -197,7 +202,13 @@ export function ContactSection() {
                               <FormItem>
                                 <FormLabel className="text-pool-100/50">Email Address</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="john@example.com" className="glass-input h-12" {...field} />
+                                  <Input 
+                                    type="email"
+                                    placeholder="john@example.com" 
+                                    className="glass-input h-14 text-lg" 
+                                    autoComplete="email"
+                                    {...field} 
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -213,7 +224,14 @@ export function ContactSection() {
                               <FormItem>
                                 <FormLabel className="text-pool-100/50">Phone Number</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="(631) 000-0000" className="glass-input h-12" {...field} />
+                                  <Input 
+                                    type="tel"
+                                    inputMode="tel"
+                                    placeholder="(631) 000-0000" 
+                                    className="glass-input h-14 text-lg" 
+                                    autoComplete="tel"
+                                    {...field} 
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -227,7 +245,7 @@ export function ContactSection() {
                                 <FormLabel className="text-pool-100/50">Service Requested</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                   <FormControl>
-                                    <SelectTrigger className="glass-input h-12 text-pool-100/50">
+                                    <SelectTrigger className="glass-input h-14 text-pool-100/50 text-lg">
                                       <SelectValue placeholder="Select a service" />
                                     </SelectTrigger>
                                   </FormControl>
@@ -252,7 +270,7 @@ export function ContactSection() {
                               <FormControl>
                                 <Textarea 
                                   placeholder="Tell us about your pool project..." 
-                                  className="glass-input min-h-[120px] resize-none" 
+                                  className="glass-input min-h-[120px] resize-none text-lg" 
                                   {...field} 
                                 />
                               </FormControl>
@@ -264,7 +282,7 @@ export function ContactSection() {
                         <Button 
                           type="submit" 
                           disabled={status === 'loading'}
-                          className="w-full bg-pool-500 hover:bg-pool-400 text-white h-14 rounded-full text-lg font-bold shadow-lg shadow-pool-500/20 transition-all active:scale-[0.98]"
+                          className="w-full bg-pool-500 hover:bg-pool-400 text-white h-16 rounded-full text-xl font-bold shadow-lg shadow-pool-500/20 transition-all active:scale-[0.98]"
                         >
                           {status === 'loading' ? (
                             <Loader2 className="w-6 h-6 animate-spin" />

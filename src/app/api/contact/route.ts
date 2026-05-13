@@ -1,5 +1,16 @@
 import { NextResponse } from 'next/server';
 import * as z from 'zod';
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
+
+// Initialize Upstash Redis & Ratelimit
+// Note: These expect UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN in environment variables
+const redis = Redis.fromEnv();
+const ratelimit = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(3, '1 m'),
+  analytics: true,
+});
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -11,31 +22,40 @@ const formSchema = z.object({
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    // IP-based Rate Limiting
+    const ip = req.headers.get('x-forwarded-for') ?? '127.0.0.1';
+    const { success } = await ratelimit.limit(ip);
     
-    // Validate request body
+    if (!success) {
+      return new NextResponse(JSON.stringify({ 
+        success: false, 
+        error: 'Too many requests. Please try again later.' 
+      }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    const body = await req.json();
     const validatedData = formSchema.safeParse(body);
     
     if (!validatedData.success) {
+      // Generic error; no Zod schema leakage
       return new NextResponse(JSON.stringify({ 
         success: false, 
-        error: 'Validation failed', 
-        details: validatedData.error.flatten().fieldErrors 
+        error: 'Invalid form data provided. Please check your inputs.' 
       }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    // Simulate database/email processing
-    // In a real app, you would use Resend or similar here
+    // Process valid data (e.g. database/email processing)
+    // Example: Send email via Resend if configured
     
     return new NextResponse(JSON.stringify({ 
       success: true, 
       message: 'Thank you for your request. Derek will contact you shortly.',
-      data: {
-        submissionId: crypto.randomUUID()
-      }
     }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
@@ -44,7 +64,7 @@ export async function POST(req: Request) {
   } catch (error) {
     return new NextResponse(JSON.stringify({ 
       success: false, 
-      error: 'An unexpected error occurred. Please call us at (631) 320-8271.' 
+      error: 'An unexpected error occurred. Please try again later.' 
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

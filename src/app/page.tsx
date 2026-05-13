@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/sections/HeroSection';
+import { PromotionSection } from '@/components/sections/PromotionSection';
 import { AuthoritySection } from '@/components/sections/AuthoritySection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { AbovegroundSection } from '@/components/sections/AbovegroundSection';
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950">
       <Navigation />
       <HeroSection />
+      <PromotionSection />
       
       <section id="authority">
         <AuthoritySection />
